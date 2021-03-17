@@ -11,14 +11,14 @@ namespace SF4._3
 
             int LenghtOfWord = word.Length;
 
-            Console.WriteLine("Состав Слова:");
+            string NewWord = "";
 
-            foreach (char s in word)
+            for (int i = LenghtOfWord - 1; i >= 0; i--)
             {
-                Console.Write("{0} ", s);
+                NewWord += word[i];
             }
-            Console.WriteLine("\n");
-            Console.WriteLine("В Слове обнаружено {0} букв!", LenghtOfWord);
+
+            Console.WriteLine("Новое Слово: {0}.", NewWord);
 
         }
     }
