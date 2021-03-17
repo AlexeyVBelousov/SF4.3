@@ -6,12 +6,15 @@ namespace SF4._3
     {
         static void Main(string[] args)
         {
-            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
-            Console.WriteLine(array[0, 0]);
+            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10}, { 11, 12, 13} };
 
-            foreach(var item in array)
+            for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
             {
-                Console.Write(item + " ");
+                for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
+                {
+                    Console.Write(array[i, k] + " ");
+                }
+                Console.Write("\n");
             }
         }
     }
