@@ -6,15 +6,37 @@ namespace SF4._3
     {
         static void Main(string[] args)
         {
-            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10}, { 11, 12, 13} };
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4};
 
-            for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+            Console.WriteLine("Исходный массив:");
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
+                Console.Write(arr[i] + " ");
+            }
+
+            Console.WriteLine("");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int minarr = arr[i];
+
+                for (int k = i; k < arr.Length; k++)
                 {
-                    Console.Write(array[i, k] + " ");
+                    if (arr[k] < minarr)
+                    {
+                        int swap = arr[i];
+                        arr[i] = arr[k];
+                        arr[k] = swap;
+                        minarr = arr[i];
+                    }
                 }
-                Console.Write("\n");
+            }
+
+            Console.WriteLine("Отсортированный массив:");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
             }
         }
     }
