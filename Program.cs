@@ -6,20 +6,13 @@ namespace SF4._3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите Слово!");
-            string word = Console.ReadLine();
+            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
+            Console.WriteLine(array[0, 0]);
 
-            int LenghtOfWord = word.Length;
-
-            string NewWord = "";
-
-            for (int i = LenghtOfWord - 1; i >= 0; i--)
+            foreach(var item in array)
             {
-                NewWord += word[i];
+                Console.Write(item + " ");
             }
-
-            Console.WriteLine("Новое Слово: {0}.", NewWord);
-
         }
     }
 }
